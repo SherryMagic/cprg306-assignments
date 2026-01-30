@@ -6,7 +6,7 @@ import GroceryItemList from "./GroceryItemList";
 export default function Page() {
     return (
         <main className ="p-4 max-w-xl mx-auto bg-green-200" >
-            <h1 className = "text-2xl font-bold mb-3 text-blue-500">Shopping List</h1>
+            <h1 className = "text-3xl font-bold mb-3 text-blue-500">Shopping List</h1>
             <GroceryItemList /> 
         </main>
     )
