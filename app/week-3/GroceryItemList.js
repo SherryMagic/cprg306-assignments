@@ -77,21 +77,13 @@ export default function GroceryItemList() {
         category: "household",
     };
 
+    const items = [item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12];
     /*Render the Item Components. Adds vertical spacing between direct children <li>  2 = 0.5rem (8px)*/
     return (
         <ul className="space-y-2">
-            <Item {...item1} />
-            <Item {...item2} />
-            <Item {...item3} />
-            <Item {...item4} />
-            <Item {...item5} />
-            <Item {...item6} />
-            <Item {...item7} />
-            <Item {...item8} />
-            <Item {...item9} />
-            <Item {...item10} />
-            <Item {...item11} />
-            <Item {...item12} />
+            {items.map((item, index) => (
+                <Item key={index} {...item} />
+            ))}
         </ul>
     )
 }
