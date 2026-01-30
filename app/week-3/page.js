@@ -5,7 +5,7 @@ text-2xl → font size around 1.5rem (24px), larger than normal text, font-bold 
 import GroceryItemList from "./GroceryItemList";
 export default function Page() {
     return (
-        <main className ="p-4 max-w-xl mx-auto bg-green-200" >
+        <main className ="p-4 max-w-xl mx-auto bg-green-100" >
             <h1 className = "text-3xl font-bold mb-3 text-blue-500">Shopping List</h1>
             <GroceryItemList /> 
         </main>
