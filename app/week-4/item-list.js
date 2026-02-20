@@ -14,21 +14,37 @@
 import Item from "./item";
 import items from "./items.json";
 
-// export default function ItemList() {
-//     return (
-//         <ul className="space-y-4">
-//             {items.map((item) => (
-//                 <Item key = {item.id}
-//                         name = {item.name}
-//                         quantity = {item.quantity}
-//                         category = {item.category} />
-//             ))}
-//         </ul>
-//     )
-// }
+
 
 //You can achieve this by manipulating the data before you map it. 
 // You might use the .reduce() method or multiple .filter() calls to organize the items into categories, and then map over those categories.
+
+//  Using {...item} in map to simplify syntax
+export default function ItemList() {
+  const categories = [...new Set(items.map((item) => item.category))];
+
+  return (
+    <div>
+      {categories.map((category) => (
+        <section key={category}>
+          <h2 className="text-2xl font-bold text-green-500">
+            {category}
+          </h2>
+
+          <ul className="space-y-4 text-orange-600">
+            {items
+              .filter((item) => item.category === category)
+              .map((item) => (
+                <Item key={item.id} {...item} />
+              ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  );
+}
+
+/*
 export default function ItemList() {
     const categories = [...new Set(items.map((item) => item.category))];
 
@@ -53,3 +69,4 @@ export default function ItemList() {
         </div>
     );
 }
+    */
