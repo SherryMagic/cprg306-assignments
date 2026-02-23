@@ -5,7 +5,7 @@
 // Tip: Ensure you are destructuring the props in the function arguments or accessing them via a props object.
 export default function Item({ name, quantity, category }) {
     return (
-        <li className="bg-green-100 p-4 rounded-lg shadow-md border border-gray-200 mb-3 dark:bg-gray-600 dark:border-gray-600">
+        <li className="bg-green-100 p-4 rounded-lg shadow-md border border-gray-200 mb-3 dark:bg-gray-600 dark:border-gray-900">
             <p className="text-lg font-semibold text-pink-400">{name}</p>
             <p className="text-sm text-purple-400">Quantity: {quantity}</p>
             <p className="text-sm text-purple-400">Category: {category}</p>

@@ -23,7 +23,7 @@ export default function Week6Page() {
     // The ItemList component.
     // Pass your items state variable to the items prop.
     return (
-        <main className="min-h-screen bg-gray-50 dark:bg-gray-800 dark:text-pink p-8">
+        <main className="min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-pink p-8">
             <h1 className="text-4xl font-bold text-green-500 mb-6">
                 Shopping List
             </h1>

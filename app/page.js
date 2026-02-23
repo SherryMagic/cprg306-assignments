@@ -1,7 +1,9 @@
 import Link from "next/link";
 export default function Home() {
   return (
-    <header>
+    <header className="bg-gray-100 p-6 rounded-lg shadow-md border border-gray-200 mb-3
+                       text-gray-800
+                       dark:bg-gray-600 dark:border-gray-600 dark:text-pink-400">
       <h1>CPRG 306: Web Development 2 - Assignments</h1>
       <nav>
         <ul>
