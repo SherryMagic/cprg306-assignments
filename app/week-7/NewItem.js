@@ -6,12 +6,16 @@ import { useState } from "react";
 
 //Props: Update the NewItem component function definition to accept props (or destructure { onAddItem }).
 export default function NewItem({ onAddItem }) {
+
+
   // Initialize State
-  const [item, setItem] = useState({
+  const initialState = {
     name: "",
     quantity: 1,
     category: "produce",
-  })
+  };
+
+  const [item, setItem] = useState(initialState);
   /*const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState("produce");*/
@@ -39,23 +43,19 @@ export default function NewItem({ onAddItem }) {
 // Keep the state reset logic (clearing the form after submission).
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
 
     setItem((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: type === "number" ? Number(value) : value,
     }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const initialState = {
-      name: "",
-      quantity: 1,
-      category: "produce",
-    };
-    const newItem = { ...item, id:crypto.randomUUID() };
+
+    const newItem = { ...item, id: crypto.randomUUID() };
     /*const newItem = { 
       id: Math.random().toString(36).substring(2, 9),
       name, 
@@ -77,7 +77,7 @@ export default function NewItem({ onAddItem }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-md mx-auto bg-gray-100 dark:bg-gray-900 dark:text-white p-6 rounded-lg shadow-md"
+      className="max-w-md m-4 mx-auto bg-gray-100 dark:bg-gray-900 dark:text-white p-6 rounded-lg shadow-md"
     >
       {/* Name field */}
       <div className="mb-4">
