@@ -45,9 +45,11 @@ export default function MealIdeas({ ingredient }) {
       {meals.length === 0 ? (
         <p>No meal ideas found.</p>
       ) : (
-        <ul className="list-disc ml-5">
+        <ul className="list-none ml-5 flex flex-wrap">
           {meals.map((meal) => (
-            <li key={meal.idMeal}>{meal.strMeal}</li>
+            <li key={meal.idMeal} className="border p-3 w-50 rounded m-2 dark:bg-gray-800 dark:border-gray-600">
+              {meal.strMeal}
+            </li>
           ))}
         </ul>
       )}

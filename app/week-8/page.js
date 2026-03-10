@@ -8,7 +8,7 @@ import NewItem from "./NewItem";
 
 import itemsData from "./items.json";
 
-export default function Week6Page() {
+export default function Week8Page() {
     const [items, setItems] = useState(itemsData)
 
     //store the ingredient for the API
@@ -70,7 +70,7 @@ export default function Week6Page() {
     // The ItemList component.
     // Pass your items state variable to the items prop.
     return (
-        <main className="max-w-xl mx-auto bg-gray-50 dark:bg-gray-900 dark:text-pink-500 p-8">
+        <main className="mx-auto bg-gray-50 dark:bg-gray-900 dark:text-pink-500 p-8">
             <div className="flex">
                 <div className="w-1/2">
                     <NewItem onAddItem={handleAddItem}/>  {/* Pass the prop */}
