@@ -1,13 +1,27 @@
-// Import Necessary Hooks: Start by importing the necessary React hooks at the top of your file. You'll be using the useState hook.
+// Build the ItemList Component
+// In item-list.js, create a functional component named ItemList.
 
-// Update Render Method: The rendering of sorting buttons remains the same. The change is in rendering the list items. Now, each Item component should be clickable and trigger the onItemSelect function with the respective item as an argument. This is achieved by passing the onSelect prop to each Item component.
+// Update ItemList Component
+// We need to remove the hardcoded data from this component so it can accept the list from the parent.
+// Props: Update the ItemList component to accept the items prop.
+// Remove Data Import: Remove the import line for items.json. The data will now come from the props.
+// State for Sorting:
+// Import useState from React.
+// Initialize a state variable sortBy (default to "name").
+// Sorting Logic:
+// Create a sorted version of the items prop based on the sortBy state.
+// Note: Do not mutate the original prop. Use [...items].sort(...).
+// Sort by name or category depending on the state variable.
+// Sort Buttons:
+// Render two buttons to toggle the sortBy state between "name" and "category".
+// Style the active button to look different (e.g., darker background).
+// Render:
+// Map over the sorted items variable (not the prop directly) to render your Item components.
 
-// Import useState
 import Item from "./item";
 import { useState } from "react";
-// Update Component Definition: Begin defining your ItemList functional component. 
-// In addition to the items prop from Week 7, this component should now also receive an onItemSelect prop.
-export default function ItemList({ items, onItemSelect }) {
+
+export default function ItemList({ items }) {
   const [sortBy, setSortBy] = useState("name");
 
   // normal sorting
@@ -83,9 +97,6 @@ export default function ItemList({ items, onItemSelect }) {
                       name={item.name}
                       quantity={item.quantity}
                       category={item.category}
-                      onSelect={() => onItemSelect(item)}  // pass item explicitly
-                      // onSelect={onItemSelect}  // pass the handler directly
-                      // onSelect = {() => onItemSelect && onItemSelect(item)}
                     />
                   ))}
               </ul>
@@ -100,9 +111,6 @@ export default function ItemList({ items, onItemSelect }) {
               name={item.name}
               quantity={item.quantity}
               category={item.category}
-              onSelect={() => onItemSelect(item)}  // pass item explicitly
-              // onSelect={onItemSelect}  // pass the handler directly
-              // onSelect = {() => onItemSelect && onItemSelect(item)}
             />
           ))}
         </ul>
