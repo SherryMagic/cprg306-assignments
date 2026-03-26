@@ -1,3 +1,5 @@
+// feedback:useEffect dependency array is [user] — this causes the listener to re-subscribe every time auth state changes, creating a listener leak. The correct pattern is an empty array [], which subscribes once on mount and cleans up on unmount
+
 "use client";
  
 import { useContext, createContext, useState, useEffect } from "react";
@@ -28,7 +30,7 @@ export const AuthContextProvider = ({ children }) => {
       setUser(currentUser);
     });
     return () => unsubscribe();
-  }, [user]);
+  }, []);
  
   return (
     <AuthContext.Provider value={{ user, gitHubSignIn, firebaseSignOut }}>
