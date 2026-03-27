@@ -12,7 +12,7 @@ export async function getItems(userId) {
     const querySnapshot = await getDocs(itemsRef);
 
     querySnapshot.forEach((doc) => {
-        items.pish({ 
+        items.push({ 
             id: doc.id,
             ...doc.data(),
         });
