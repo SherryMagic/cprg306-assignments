@@ -4,6 +4,10 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { getAuth } from "firebase/auth";
 
+import { getFirestore } from "firebase/firestore";
+
+
+
 // console.log("API KEY:", process.env.NEXT_PUBLIC_FIREBASE_API_KEY);
  
 // Your web app's Firebase configuration
@@ -19,3 +23,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+
+export const db = getFirestore(app);
